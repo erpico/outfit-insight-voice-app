@@ -69,12 +69,15 @@ const ChatInterface: React.FC = () => {
         // Get AI response
         const response = await sendMessageToOpenAI(messageHistory);
         
-        addMessage({
-          role: 'assistant',
-          content: response.content,
-          messageType: 'text'
-        });
-        
+        if (response && response.content) {
+          addMessage({
+            role: 'assistant',
+            content: response.content,
+            messageType: 'text'
+          });
+        } else {
+          throw new Error('Invalid response from AI');
+        }
       } catch (error) {
         console.error('Error getting AI response:', error);
         addMessage({

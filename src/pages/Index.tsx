@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { ChatProvider } from '../context/ChatContext';
-import ChatInterface from '../components/ChatInterface';
+import StepGuide from '../components/StepGuide';
 import Header from '../components/Header';
 
 const Index = () => {
@@ -10,7 +10,7 @@ const Index = () => {
       <div className="flex flex-col h-screen bg-background">
         <Header />
         <main className="flex-1 overflow-hidden flex flex-col">
-          <ChatInterface />
+          <StepGuide />
         </main>
       </div>
     </ChatProvider>

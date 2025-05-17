@@ -54,7 +54,7 @@ export const ChatProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const addImageMessage = (imageUrl: string) => {
     const newMessage = {
       id: uuidv4(),
-      role: 'user',
+      role: 'user' as const,
       content: 'Uploaded a photo',
       imageUrl,
       messageType: 'image' as const,
